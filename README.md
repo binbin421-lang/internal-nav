@@ -172,8 +172,6 @@ internal-nav/
 ├── README.md               # 项目说明文档
 ├── README_WINDOWS.md        # Windows使用文档
 ├── DEPLOY.md                # 部署说明
-├── GITHUB_UPLOAD_GUIDE.md   # GitHub上传指南
-├── .gitignore               # Git忽略文件配置
 ├── data/                    # 数据目录
 │   └── example_tools.csv    # 软件数据库
 ├── static/                  # 静态资源目录
