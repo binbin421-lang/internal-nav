@@ -2,6 +2,11 @@
 
 一个基于Flask开发的内网常用工具下载中心，提供软件分类展示、搜索、下载和管理功能。
 
+## 📸 网站截图
+
+![网站首页](https://example.com/screenshot-home.png)
+![下载页面](https://example.com/screenshot-download.png)
+
 ## 🚀 功能特性
 
 - **软件管理**：支持软件上传、下载、分类管理
