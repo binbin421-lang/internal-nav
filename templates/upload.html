@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上传软件 - 内网常用工具下载中心</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .upload-form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .upload-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.95em;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .file-upload-group {
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .file-upload-group:hover {
+            border-color: #3498db;
+            background-color: #f0f8ff;
+        }
+        
+        .file-upload-input {
+            display: none;
+        }
+        
+        .file-upload-label {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0 auto;
+        }
+        
+        .file-upload-label:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .file-info {
+            margin-top: 10px;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+        
+        .form-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .submit-btn,
+        .cancel-btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        
+        .submit-btn {
+            background-color: #27ae60;
+            color: white;
+        }
+        
+        .submit-btn:hover {
+            background-color: #229954;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .cancel-btn {
+            background-color: #95a5a6;
+            color: white;
+        }
+        
+        .cancel-btn:hover {
+            background-color: #7f8c8d;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>内网常用工具下载中心</h1>
+            <p>高效管理内网工具，便捷下载使用</p>
+        </header>
+
+        <div class="upload-form-container">
+            <a href="/" class="back-link">
+                返回软件列表
+            </a>
+            
+            <h2>上传新软件</h2>
+            
+            <form action="/upload_software" method="post" enctype="multipart/form-data" class="upload-form">
+                <div class="form-group">
+                    <label for="software_name">软件名称 *</label>
+                    <input type="text" id="software_name" name="software_name" required placeholder="请输入软件名称">
+                </div>
+                
+                <div class="form-group">
+                    <label for="version">版本 *</label>
+                    <input type="text" id="version" name="version" required placeholder="请输入软件版本">
+                </div>
+                
+                <div class="form-group">
+                    <label for="category">分类 *</label>
+                    <select id="category" name="category" required>
+                        <option value="">请选择分类</option>
+                        <option value="办公协作">办公协作</option>
+                        <option value="办公软件">办公软件</option>
+                        <option value="开发工具">开发工具</option>
+                        <option value="浏览器">浏览器</option>
+                        <option value="压缩工具">压缩工具</option>
+                        <option value="远程工具">远程工具</option>
+                        <option value="设计工具">设计工具</option>
+                        <option value="安全工具">安全工具</option>
+                        <option value="其他">其他</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="system">适用系统 *</label>
+                    <select id="system" name="system" required>
+                        <option value="">请选择适用系统</option>
+                        <option value="Windows">Windows</option>
+                        <option value="macOS">macOS</option>
+                        <option value="Linux">Linux</option>
+                        <option value="Windows/macOS">Windows/macOS</option>
+                        <option value="全平台">全平台</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">软件简介</label>
+                    <textarea id="description" name="description" placeholder="请输入软件简介"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="remark">备注信息</label>
+                    <textarea id="remark" name="remark" placeholder="请输入备注信息"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>上传文件 *</label>
+                    <div class="file-upload-group">
+                        <input type="file" id="file" name="file" class="file-upload-input" required accept=".exe,.msi,.zip,.rar,.7z,.pdf,.dmg,.pkg">
+                        <label for="file" class="file-upload-label">
+                            选择要上传的文件
+                        </label>
+                        <p class="file-info">支持的文件格式：exe, msi, zip, rar, 7z, pdf, dmg, pkg</p>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>上传软件Logo（可选）</label>
+                    <div class="file-upload-group">
+                        <input type="file" id="logo" name="logo" class="file-upload-input" accept=".png,.jpg,.jpeg,.gif,.webp">
+                        <label for="logo" class="file-upload-label">
+                            选择Logo图片
+                        </label>
+                        <p class="file-info">支持的图片格式：png, jpg, jpeg, gif, webp</p>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">
+                        上传软件
+                    </button>
+                    <a href="/" class="cancel-btn">
+                        取消
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // 显示选中的文件名
+        document.getElementById('file').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const fileInfo = document.querySelector('.file-info');
+                fileInfo.innerHTML = `已选择文件：${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)<br>支持的文件格式：exe, msi, zip, rar, 7z, pdf, dmg, pkg`;
+            }
+        });
+    </script>
+</body>
+</html>

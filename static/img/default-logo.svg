@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <!-- 背景圆形 -->
+  <circle cx="25" cy="25" r="24" fill="#3498db" opacity="0.1"/>
+  <circle cx="25" cy="25" r="20" fill="#3498db" opacity="0.2"/>
+  
+  <!-- 中心图标 - 简化的互联网图标 -->
+  <path d="M10,25 C10,16.7157288 16.7157288,10 25,10 C33.2842712,10 40,16.7157288 40,25 C40,33.2842712 33.2842712,40 25,40 C16.7157288,40 10,33.2842712 10,25 Z" fill="#3498db" opacity="0.3"/>
+  
+  <!-- 连接点 -->
+  <circle cx="25" cy="10" r="3" fill="#3498db"/>
+  <circle cx="40" cy="25" r="3" fill="#3498db"/>
+  <circle cx="25" cy="40" r="3" fill="#3498db"/>
+  <circle cx="10" cy="25" r="3" fill="#3498db"/>
+  <circle cx="25" cy="25" r="4" fill="#3498db"/>
+  
+  <!-- 连接线 -->
+  <line x1="25" y1="13" x2="25" y2="21" stroke="#3498db" stroke-width="2"/>
+  <line x1="29" y1="25" x2="37" y2="25" stroke="#3498db" stroke-width="2"/>
+  <line x1="25" y1="29" x2="25" y2="37" stroke="#3498db" stroke-width="2"/>
+  <line x1="13" y1="25" x2="21" y2="25" stroke="#3498db" stroke-width="2"/>
+  
+  <!-- 对角线连接 -->
+  <line x1="14.5" y1="14.5" x2="20.5" y2="20.5" stroke="#3498db" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <line x1="29.5" y1="14.5" x2="35.5" y2="20.5" stroke="#3498db" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <line x1="29.5" y1="29.5" x2="35.5" y2="35.5" stroke="#3498db" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <line x1="14.5" y1="29.5" x2="20.5" y2="35.5" stroke="#3498db" stroke-width="1.5" stroke-dasharray="2,2"/>
+</svg>

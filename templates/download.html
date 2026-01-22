@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内网常用工具下载中心</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="compact-header">
+            <div class="header-left">
+                <img src="/static/img/logo.png" alt="内网工具下载" class="header-logo" onerror="this.src='/static/img/default-logo.svg'">
+                <h1 class="sr-only">内网常用工具下载中心</h1>
+            </div>
+            <div class="header-right">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="搜索软件..." class="header-search" />
+                </div>
+            </div>
+        </header>
+        
+        <!-- 新增筛选栏 -->
+        <section class="filter-section">
+            <div class="filter-box">
+                <select id="categoryFilter" class="header-select">
+                    <option value="">全部分类</option>
+                </select>
+                <select id="systemFilter" class="header-select">
+                    <option value="">全部系统</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="software-section">
+            <h2>软件列表</h2>
+            <div class="software-grid" id="softwareGrid">
+                <div class="empty-state">
+                    <p>正在加载软件列表...</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 软件详情弹窗 -->
+    <div id="softwareModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

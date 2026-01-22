@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内网网址导航中心</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="compact-header">
+            <div class="header-left">
+                <img src="/static/img/logo.png" alt="内网导航" class="header-logo" onerror="this.src='/static/img/default-logo.svg'">
+                <h1 class="sr-only">内网网址导航中心</h1>
+            </div>
+            <div class="header-right">
+                <input type="text" id="searchInput" placeholder="搜索网站..." class="header-search" />
+            </div>
+        </header>
+
+        <!-- 分类标签卡区域 -->
+        <section class="category-tabs-section">
+            <div class="category-tabs-container">
+                <button class="category-arrow category-arrow-left" id="categoryArrowLeft">&lt;</button>
+                <div class="category-tabs" id="categoryTabs">
+                    <div class="category-tab active" data-category="">全部分类</div>
+                </div>
+                <button class="category-arrow category-arrow-right" id="categoryArrowRight">&gt;</button>
+            </div>
+        </section>
+
+        <section class="software-section">
+            <h2>网站导航</h2>
+            <div class="software-grid" id="sitesGrid">
+                <div class="empty-state">
+                    <p>正在加载网站列表...</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 网站详情弹窗 -->
+    <div id="siteModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="/static/js/nav.js"></script>
+</body>
+</html>

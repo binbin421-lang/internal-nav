@@ -1,0 +1,54 @@
+# Python虚拟环境
+venv/
+.venv/
+env/
+ENV/
+
+# Python编译文件
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# 上传文件目录
+uploads/
+
+# 日志文件
+*.log
+logs/
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# IDE配置文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 环境变量文件
+.env
+.env.local
+.env.*.local
+
+# 打包生成的文件
+dist/
+build/
+*.spec
+package/
+
+# 数据库文件
+*.db
+*.sqlite3
+
+# Excel/CSV数据文件（示例文件除外）
+data/*.xlsx
+data/*.csv
+!data/example_tools.csv
+
+# Windows打包脚本生成的文件
+*.exe
+*.dll
+*.pyd
