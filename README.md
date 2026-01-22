@@ -4,8 +4,7 @@
 
 ## 📸 网站截图
 
-![网站首页](https://example.com/screenshot-home.png)
-![下载页面](https://example.com/screenshot-download.png)
+![网站首页](sou.png)
 
 ## 🚀 功能特性
 
